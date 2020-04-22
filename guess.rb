@@ -17,16 +17,21 @@ if Eas == "Easy"
         if guess_count < guess_limit
             puts "Guess a number between 1 and 10: "
             guess = gets.to_i
+            if guess == secret_num
+                break
+            end
+            if guess > 10
+                puts "Out of guessing range"
+            end
             guess_count += 1
             guesses = guess_limit - guess_count
             puts "Your are wrong"
             puts "You have #{guesses} guesses left"
         else
-            guess = secret_num
-            out_of_guesses = true
+          out_of_guesses = true
         end
     end
-    
+
     if out_of_guesses
         puts "You Lose"
     else
@@ -40,20 +45,26 @@ elsif Eas == "Medium"
         guess = ""
         guess_count = 0
         guess_limit = 4
-        
+
         out_of_guesses = false
-      
+
     while guess != secret_num and !out_of_guesses
         if guess_count < guess_limit
             puts "Guess a number between 1 and 20: "
-            guess = gets.to_i 
+            guess = gets.to_i
+            if guess == secret_num
+                break
+            end
+            if guess > 20
+                puts "Out of guessing range"
+            end
             guess_count += 1
             guesses = guess_limit - guess_count
-            puts "You have #{guesses} guesses left" 
+            puts "You have #{guesses} guesses left"
         else
             guess = secret_num
             out_of_guesses = true
-        end      
+        end
     end
     if out_of_guesses
         puts "You Lose"
@@ -63,25 +74,31 @@ elsif Eas == "Medium"
 
 elsif Eas == "Hard"
     puts ("Your are playing the Hard Stage")
-          
+
         secret_num = 37
         guess = ""
         guess_count = 0
         guess_limit = 3
-            
+
         out_of_guesses = false
-          
+
     while guess != secret_num and !out_of_guesses
         if guess_count < guess_limit
             puts "Guess a number between 1 and 50: "
-            guess = gets.to_i 
+            guess = gets.to_i
+            if guess == secret_num
+                break
+            end
+            if guess > 50
+                puts "Out of guessing range"
+            end
             guess_count += 1
             guesses = guess_limit - guess_count
-            puts "You have #{guesses} guesses left" 
+            puts "You have #{guesses} guesses left"
         else
             guess = secret_num
             out_of_guesses = true
-        end      
+        end
         end
     if out_of_guesses
             puts "You Lose"
